@@ -31,7 +31,7 @@ gulp.task('clean', function(done) {
 gulp.task('build', ['clean', 'webpack:build']);
 
 gulp.task('webpack:build', function(callback) {
-  // modify some webpack config options
+  // Edit some webpack config options
   var myConfig = Object.create(webpackConfig);
 
   if (argv.env != 'development') {
@@ -58,7 +58,7 @@ gulp.task('webpack:build', function(callback) {
   });
 });
 
-// modify some webpack config options
+// Edit some webpack config options
 var myDevConfig = Object.create(webpackConfig);
 myDevConfig.devtool = 'sourcemap';
 myDevConfig.debug = true;
@@ -85,7 +85,7 @@ gulp.task('open-webpack-server-url', function() {
 });
 
 gulp.task('webpack-dev-server', function(callback) {
-  // modify some webpack config options
+  // Edit some webpack config options
   var myConfig = Object.create(webpackConfig);
   myConfig.devtool = 'eval';
   myConfig.debug = true;

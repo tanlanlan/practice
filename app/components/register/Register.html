@@ -1,0 +1,31 @@
+<ion-view view-title="{{'register'|translate}}">
+  <div ng-if="register.activated">
+    <ion-content class="padding">
+
+      <div>
+        <form name="registerForm">
+        <label class="item item-input" >
+            <span class="input-label" aria-label="Username" id="_label-0">username</span>
+            <input name="username" type="text"  style="" ng-model="register.user.username" required>
+
+        </label>
+        <span style="color:red" ng-show="registerForm.user.$dirty && registerForm.user.$invalid">
+       <span ng-show="register.user.$error.required">用户名是必须的。</span>
+        </span>
+      </div>
+
+      <div>
+        <label class="item item-input" >
+              <span class="input-label" aria-label="password" id="_label-1">password</span>
+              <input name="password" type="password"  style="" ng-model="register.user.password" required>
+              <span style="color:red"ng-show="registerForm.password.$invalid  &&registerForm.user.$submitted">
+            <span ng-show="registerForm.user.$error.required"> 设置密码是必须的。</span>
+              </span>
+        </label>
+      </form>
+      </div>
+      <button class="button button-positive button-block" ng-click="register.register()" type="submit">register</button>
+      {{register.massage}}
+    </ion-content>
+  </div>
+</ion-view>

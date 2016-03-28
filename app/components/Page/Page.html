@@ -1,10 +1,31 @@
 <ion-view view-title="Page">
   <div ng-if="vm.activated">
     <ion-content class="padding">
-      {{vm.message}}
-      <div>
-        <button class="button" ng-click="vm.goPageTwo()">Go Page Two</button>
-      </div>
+
+      <form name="signInform">
+        <div>
+
+          <label class="item item-input">
+            <span class="input-label" aria-label="Username" id="_label-0">username</span>
+            <input name="`username" type="text" style="" ng-model="vm.username">
+          </label>
+        </div>
+
+        <div>
+          <label class="item item-input">
+            <span class="input-label" aria-label="password" id="_label-1">password</span>
+            <input name="password" type="password" style="" ng-model="vm.password">
+          </label>
+        </div>
+
+        <div class="padding">
+          <button large class="button button-block button-positive" ng-click="vm.signIn()">登陆</button>
+          <button class="button button-block button-positive" ng-click="vm.goRegister()">注册</button>
+
+        </div>
+
+      </form>
+
     </ion-content>
   </div>
 </ion-view>

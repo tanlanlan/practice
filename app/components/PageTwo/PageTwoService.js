@@ -1,12 +1,32 @@
-export default function PageTwoService() {
+export default function PageTwoService($http, ApiService) {
   'ngInject';
 
+  var message = [];
   var service = {
-    test
+    findAll,
+    remove,
   };
   return service;
 
-  function test() {
-    console.log('calling PageTwoService.test()');
+
+
+  function findAll() {
+    return $http({
+      method: 'GET',
+      url: ApiService.getUrl('/api/todos')
+    });
   }
+
+  function remove(id) {
+    // console.log('id:' + id);
+    return $http({
+      method: 'DELETE',
+      url: ApiService.getUrl('/api/todos/' + id)
+    });
+  }
+
+
+
+
+
 }
